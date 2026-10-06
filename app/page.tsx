@@ -1,37 +1,22 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 
 import { ArticleCard } from "@/components/ArticleCard";
 import { articles } from "@/data/articles";
 import heroImage from "@/assets/covers/hero.jpg";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Vaibhavi Srivastava — Writing" },
-      {
-        name: "description",
-        content:
-          "Articles on software, systems and the craft of building things. By Vaibhavi Srivastava.",
-      },
-      { property: "og:title", content: "Vaibhavi Srivastava — Writing" },
-      {
-        property: "og:description",
-        content:
-          "Articles on software, systems and the craft of building things. By Vaibhavi Srivastava.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: Landing,
-});
+export const metadata: Metadata = {
+  title: "Writing",
+  description:
+    "Articles on software, systems and the craft of building things. By Vaibhavi Srivastava.",
+};
 
-function Landing() {
+export default function HomePage() {
   const featured = articles.slice(0, 4);
 
   return (
     <main className="mx-auto w-full max-w-[1440px] px-5 pb-20 sm:px-8 lg:px-12">
-      {/* ---- Masthead ---- */}
       <header className="pt-16 sm:pt-24">
         <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
           Vaibhavi Srivastava · Est. 2026
@@ -42,12 +27,11 @@ function Landing() {
 
         <div className="mt-10 flex flex-col gap-8 border-t border-border pt-6 sm:flex-row sm:items-end sm:justify-between">
           <p className="max-w-md text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-            Articles about how software gets made — the systems we live
-            inside, the tools we trust, and the craft of work that lasts.
-            Everything is published on Medium.
+            Articles about how software gets made — the systems we live inside, the tools we trust,
+            and the craft of work that lasts. Everything is published on Medium.
           </p>
           <Link
-            to="/all"
+            href="/all"
             className="group inline-flex shrink-0 items-baseline gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-foreground underline-offset-4 hover:underline"
           >
             See articles
@@ -61,34 +45,30 @@ function Landing() {
         </div>
       </header>
 
-      {/* ---- Hero image: the dominant visual of the page ---- */}
       <section className="mt-12 sm:mt-16">
-        <div className="aspect-[16/10] w-full overflow-hidden bg-secondary sm:aspect-[21/9]">
-          <img
+        <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary sm:aspect-[21/9]">
+          <Image
             src={heroImage}
             alt="Abstract geometric composition in cream, charcoal and slate blue"
-            width={1920}
-            height={1088}
-            fetchPriority="high"
-            className="h-full w-full object-cover"
+            fill
+            priority
+            sizes="(max-width: 640px) 100vw, 90vw"
+            className="object-cover"
           />
         </div>
         <div className="mt-3 flex items-baseline justify-between text-[11px] text-muted-foreground">
           <span>Fig. 01 — Composition in cream, charcoal &amp; slate</span>
-          <span className="hidden sm:inline">
-            {articles.length} articles · Updated monthly
-          </span>
+          <span className="hidden sm:inline">{articles.length} articles · Updated monthly</span>
         </div>
       </section>
 
-      {/* ---- Selected writing ---- */}
       <section className="mt-20 sm:mt-28">
         <div className="flex items-baseline justify-between gap-4">
           <h2 className="text-[11px] font-medium uppercase tracking-[0.18em] text-foreground">
             Selected writing
           </h2>
           <Link
-            to="/all"
+            href="/all"
             className="group inline-flex shrink-0 items-baseline gap-1.5 text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
           >
             View articles
@@ -110,16 +90,14 @@ function Landing() {
         </div>
       </section>
 
-      {/* ---- Statement ---- */}
       <section className="mt-24 border-t border-border pt-16 sm:mt-32">
         <blockquote className="mx-auto max-w-3xl text-center">
-            <p className="font-display text-3xl leading-snug tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-              “I write to understand what I built — and to remember why it
-              mattered.”
-            </p>
-            <footer className="mt-6 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-              Vaibhavi Srivastava
-            </footer>
+          <p className="font-display text-3xl leading-snug tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+            “I write to understand what I built — and to remember why it mattered.”
+          </p>
+          <footer className="mt-6 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+            Vaibhavi Srivastava
+          </footer>
         </blockquote>
 
         <div className="mx-auto mt-16 grid max-w-3xl grid-cols-1 gap-px bg-border sm:grid-cols-3">

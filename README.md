@@ -9,6 +9,7 @@ DESIGN DIRECTION
 Clean, minimal, editorial and designer-focused.
 
 Think:
+
 - contemporary digital publication
 - curated visual archive
 - strong typography
@@ -18,6 +19,7 @@ Think:
 - sophisticated rather than corporate
 
 Do NOT make this look like:
+
 - a SaaS dashboard
 - a blog CMS
 - a documentation website
@@ -68,12 +70,14 @@ The visual is the primary element of every card.
 IMPORTANT HOVER BEHAVIOR:
 
 When the user is NOT hovering:
+
 - show the image almost completely unobstructed
 - no text overlay
 - no large labels
 - no permanent metadata over the image
 
 When the user HOVERS:
+
 - introduce a very subtle translucent overlay or slight darkening
 - KEEP MOST OF THE IMAGE VISIBLE
 - do NOT cover the image with a large opaque panel
@@ -96,6 +100,7 @@ Keep the title concise and elegant.
 The image should remain clearly visible behind the information.
 
 The hover transition should be subtle and quick:
+
 - slight image movement or scale is acceptable
 - subtle overlay fade
 - subtle text fade/slide
@@ -209,23 +214,15 @@ The image must remain the dominant visual element.
 
 The hover state should feel like information appearing ON TOP OF the image, not a card turning into a text panel.
 
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/f4590127-f0b6-48e3-9f7f-a1e7b32da324).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+This is a Next.js App Router project. Use Node.js 20.9 or newer.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
+
+The home page is available at `http://localhost:3000`; the full article
+collection is at `/all`. Production builds use `npm run build` and can be
+started locally with `npm start`.

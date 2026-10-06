@@ -1,31 +1,15 @@
-import { createFileRoute } from "@tanstack/react-router";
+import type { Metadata } from "next";
 
 import { ArticleCard } from "@/components/ArticleCard";
 import { articles } from "@/data/articles";
 
-export const Route = createFileRoute("/all")({
-  head: () => ({
-    meta: [
-      { title: "Articles — Vaibhavi Srivastava" },
-      {
-        name: "description",
-        content:
-          "The complete collection of articles on software, systems and the craft of building things. By Vaibhavi Srivastava.",
-      },
-      { property: "og:title", content: "Articles — Vaibhavi Srivastava" },
-      {
-        property: "og:description",
-        content:
-          "The complete collection of articles on software, systems and the craft of building things. By Vaibhavi Srivastava.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: Collection,
-});
+export const metadata: Metadata = {
+  title: "Articles",
+  description:
+    "The complete collection of articles on software, systems and the craft of building things. By Vaibhavi Srivastava.",
+};
 
-function Collection() {
+export default function ArticlesPage() {
   return (
     <main className="mx-auto w-full max-w-[1440px] px-5 pb-10 sm:px-8 lg:px-12">
       <header className="grid items-end gap-6 pb-12 pt-16 sm:grid-cols-[minmax(0,1fr)_auto] sm:pb-14 sm:pt-24">

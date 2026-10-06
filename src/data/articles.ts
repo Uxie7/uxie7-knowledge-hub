@@ -10,6 +10,7 @@ import cover09 from "@/assets/covers/cover-09.jpg";
 import cover10 from "@/assets/covers/cover-10.jpg";
 import cover11 from "@/assets/covers/cover-11.jpg";
 import cover12 from "@/assets/covers/cover-12.jpg";
+import type { StaticImageData } from "next/image";
 
 export interface Article {
   /** Stable slug-like identifier. */
@@ -21,7 +22,7 @@ export interface Article {
   /** Short one-line description. Kept in data for future use (e.g. SEO). */
   description: string;
   /** Cover image URL — imported asset or any absolute URL. */
-  image: string;
+  image: StaticImageData;
   /** Publication date, formatted as a short human-readable string. */
   date: string;
   /** Estimated read time, e.g. "6 min". */
@@ -41,32 +42,27 @@ export const articles: Article[] = [
     id: "the-quiet-discipline-of-side-projects",
     title: "The Quiet Discipline of Side Projects",
     category: "Craft",
-    description:
-      "Why unfinished personal work teaches more than shipped client work.",
+    description: "Why unfinished personal work teaches more than shipped client work.",
     image: cover01,
     date: "Sep 28, 2026",
     readTime: "6 min",
-    mediumUrl:
-      "https://medium.com/@yourhandle/the-quiet-discipline-of-side-projects",
+    mediumUrl: "https://medium.com/@yourhandle/the-quiet-discipline-of-side-projects",
   },
   {
     id: "design-systems-are-opinions",
     title: "Design Systems Are Opinions",
     category: "Design",
-    description:
-      "Every token, component and spacing rule is an argument about taste.",
+    description: "Every token, component and spacing rule is an argument about taste.",
     image: cover02,
     date: "Sep 14, 2026",
     readTime: "8 min",
-    mediumUrl:
-      "https://medium.com/@yourhandle/design-systems-are-opinions",
+    mediumUrl: "https://medium.com/@yourhandle/design-systems-are-opinions",
   },
   {
     id: "notes-on-slowness",
     title: "Notes on Slowness",
     category: "Culture",
-    description:
-      "What happens to quality when nobody is watching the clock.",
+    description: "What happens to quality when nobody is watching the clock.",
     image: cover03,
     date: "Sep 2, 2026",
     readTime: "5 min",
@@ -76,44 +72,37 @@ export const articles: Article[] = [
     id: "what-good-documentation-actually-costs",
     title: "What Good Documentation Actually Costs",
     category: "Systems",
-    description:
-      "An honest accounting of the time writing docs really takes.",
+    description: "An honest accounting of the time writing docs really takes.",
     image: cover04,
     date: "Aug 21, 2026",
     readTime: "9 min",
-    mediumUrl:
-      "https://medium.com/@yourhandle/what-good-documentation-actually-costs",
+    mediumUrl: "https://medium.com/@yourhandle/what-good-documentation-actually-costs",
   },
   {
     id: "interfaces-that-trust-the-user",
     title: "Interfaces That Trust the User",
     category: "Interface",
-    description:
-      "Confirmation dialogs are often just products of our own insecurity.",
+    description: "Confirmation dialogs are often just products of our own insecurity.",
     image: cover05,
     date: "Aug 10, 2026",
     readTime: "7 min",
-    mediumUrl:
-      "https://medium.com/@yourhandle/interfaces-that-trust-the-user",
+    mediumUrl: "https://medium.com/@yourhandle/interfaces-that-trust-the-user",
   },
   {
     id: "reading-code-like-a-writer",
     title: "Reading Code Like a Writer",
     category: "Writing",
-    description:
-      "Editing prose and refactoring software are the same instinct.",
+    description: "Editing prose and refactoring software are the same instinct.",
     image: cover06,
     date: "Jul 30, 2026",
     readTime: "6 min",
-    mediumUrl:
-      "https://medium.com/@yourhandle/reading-code-like-a-writer",
+    mediumUrl: "https://medium.com/@yourhandle/reading-code-like-a-writer",
   },
   {
     id: "the-grid-is-not-a-cage",
     title: "The Grid Is Not a Cage",
     category: "Design",
-    description:
-      "Structure is what makes deliberate rule-breaking legible.",
+    description: "Structure is what makes deliberate rule-breaking legible.",
     image: cover07,
     date: "Jul 18, 2026",
     readTime: "5 min",
@@ -123,44 +112,37 @@ export const articles: Article[] = [
     id: "on-choosing-boring-technology",
     title: "On Choosing Boring Technology",
     category: "Tools",
-    description:
-      "The most exciting stack is the one you never have to think about.",
+    description: "The most exciting stack is the one you never have to think about.",
     image: cover08,
     date: "Jul 6, 2026",
     readTime: "4 min",
-    mediumUrl:
-      "https://medium.com/@yourhandle/on-choosing-boring-technology",
+    mediumUrl: "https://medium.com/@yourhandle/on-choosing-boring-technology",
   },
   {
     id: "a-vocabulary-for-feedback",
     title: "A Vocabulary for Feedback",
     category: "Process",
-    description:
-      "How precise words make critique easier to give and easier to hear.",
+    description: "How precise words make critique easier to give and easier to hear.",
     image: cover09,
     date: "Jun 24, 2026",
     readTime: "8 min",
-    mediumUrl:
-      "https://medium.com/@yourhandle/a-vocabulary-for-feedback",
+    mediumUrl: "https://medium.com/@yourhandle/a-vocabulary-for-feedback",
   },
   {
     id: "small-screens-small-promises",
     title: "Small Screens, Small Promises",
     category: "Interface",
-    description:
-      "Designing for mobile means designing for one intent at a time.",
+    description: "Designing for mobile means designing for one intent at a time.",
     image: cover10,
     date: "Jun 12, 2026",
     readTime: "6 min",
-    mediumUrl:
-      "https://medium.com/@yourhandle/small-screens-small-promises",
+    mediumUrl: "https://medium.com/@yourhandle/small-screens-small-promises",
   },
   {
     id: "the-archive-instinct",
     title: "The Archive Instinct",
     category: "Culture",
-    description:
-      "Why we save things we will never read again — and why that's fine.",
+    description: "Why we save things we will never read again — and why that's fine.",
     image: cover11,
     date: "May 30, 2026",
     readTime: "7 min",
@@ -170,12 +152,10 @@ export const articles: Article[] = [
     id: "learning-in-public-slowly",
     title: "Learning in Public, Slowly",
     category: "Writing",
-    description:
-      "Publishing before you feel ready is a feature, not a bug.",
+    description: "Publishing before you feel ready is a feature, not a bug.",
     image: cover12,
     date: "May 18, 2026",
     readTime: "5 min",
-    mediumUrl:
-      "https://medium.com/@yourhandle/learning-in-public-slowly",
+    mediumUrl: "https://medium.com/@yourhandle/learning-in-public-slowly",
   },
 ];

@@ -1,4 +1,5 @@
 import type { Article } from "@/data/articles";
+import Image from "next/image";
 
 /**
  * A single article card in the archive grid.
@@ -18,11 +19,11 @@ export function ArticleCard({ article }: { article: Article }) {
       className="group block outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background"
     >
       <div className="relative aspect-[1/1.12] w-full overflow-hidden bg-secondary">
-        <img
+        <Image
           src={article.image}
           alt={article.title}
-          loading="lazy"
-          decoding="async"
+          fill
+          sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 25vw"
           className="h-full w-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-[1.025]"
         />
         {/* Scrim + info: invisible at rest, fades in on hover/focus. */}
